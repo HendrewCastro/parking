@@ -21,11 +21,11 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgresql://postgres:1324@localhost/parking_db
+      DATABASE_URL: postgresql://postgres:1324@db:5432/parking_db
     ports:
       - "8010:8010"
     volumes:
-      - "C:/Users/teste3/Desktop/Parking/parking_api:/app"
+      - .:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8010 --reload
 
 volumes:
